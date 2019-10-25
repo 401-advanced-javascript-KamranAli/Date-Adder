@@ -21,7 +21,12 @@ class Set {
     return this.array.includes(value);
   }
 
-
+  intersect(){
+    const set = new Set([]);
+    for(let i = 0; i < this.array.length; i++){
+      
+    }
+  }
 
 
 
