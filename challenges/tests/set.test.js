@@ -17,4 +17,18 @@ describe('Set Exercise', () => {
     const set = new Set([1, 2, 3]);
     expect(set.has(2)).toBe(true);
   });
+
+  it('returns set intersections', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([2, 3, 4]);
+    const result = set1.intersect(set2);
+    expect(result.array).toEqual([2, 3]);
+  });
+
+  it('returns set union', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([2, 3, 4]);
+    const result = set1.union(set2);
+    expect(result.array).toEqual([2, 3]);
+  });
 });
