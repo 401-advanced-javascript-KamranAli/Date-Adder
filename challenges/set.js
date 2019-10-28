@@ -77,7 +77,20 @@ class Set {
     return otherSet;
   }
 
-
+  static difference(set1, set2) {
+    const otherSet = new Set([]);
+    for(let i = 0; i < set1.array.length; i++) {
+      if(!set2.array.includes(set1.array[i])) {
+        otherSet.add(set1.array[i]);
+      }
+    }
+    for(let j = 0; j < set2.array.length; j++) {
+      if(!set1.array.includes(set2.array[j])) {
+        otherSet.add(set2.array[j]);
+      }
+      return otherSet;
+    }
+  }
 
 
 }

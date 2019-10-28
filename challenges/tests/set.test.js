@@ -52,4 +52,11 @@ describe('Set Exercise', () => {
     const result = Set.union(set1, set2);
     expect(result.array).toEqual([1, 2, 3, 4]);
   });
+
+  it('returns 2 set difference', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([2, 3, 4]);
+    const result = Set.difference(set1, set2);
+    expect(result.array).toEqual([1]);
+  });
 });
