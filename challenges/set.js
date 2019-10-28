@@ -32,7 +32,7 @@ class Set {
   }
 
   union(set) {
-    const otherSet = ([]);
+    const otherSet = new Set([]);
     for(let i = 0; i < this.array.length; i++) {
       otherSet.add(this.array[i]);
     }
@@ -43,18 +43,19 @@ class Set {
   }
 
   difference(set) {
-    const otherSet = ([]);
+    const otherSet = new Set([]);
     for(let i = 0; i < this.array.length; i++) {
       if(!set.array.includes(this.array[i])) {
         otherSet.add(this.array[i]);
       }
-      for(let j = 0; j < set.length; j++) {
-        if(!this.array.includes(set.array[j]))
-          otherSet.add(set.array[j]);
-      }
-      return otherSet;
     }
+    for(let j = 0; j < set.length; j++) {
+      if(!this.array.includes(set.array[j]))
+        otherSet.add(set.array[j]);
+    }
+    return otherSet;
   }
 }
+
 
 module.exports = Set;

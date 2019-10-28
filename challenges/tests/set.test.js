@@ -29,6 +29,13 @@ describe('Set Exercise', () => {
     const set1 = new Set([1, 2, 3]);
     const set2 = new Set([2, 3, 4]);
     const result = set1.union(set2);
-    expect(result.array).toEqual([2, 3]);
+    expect(result.array).toEqual([1, 2, 3, 4]);
+  });
+
+  it('returns set difference', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([2, 3, 4]);
+    const result = set1.difference(set2);
+    expect(result.array).toEqual([1]);
   });
 });
