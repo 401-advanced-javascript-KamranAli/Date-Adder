@@ -11,7 +11,7 @@ class Set {
   }
 
   remove(value) {
-    if(this.array.includes(value)){
+    if(this.array.includes(value)) {
       const number = this.array.indexOf(value);
       this.array.splice(number, 1);
     }
@@ -21,11 +21,14 @@ class Set {
     return this.array.includes(value);
   }
 
-  intersect(){
-    const set = new Set([]);
-    for(let i = 0; i < this.array.length; i++){
-      
+  intersect(set) {
+    const otherSet = new Set([]);
+    for(let i = 0; i < this.array.length; i++) {
+      if(set.array.includes(this.array[i])) {
+        otherSet.add(this.array[i]);
+      }
     }
+    return otherSet;
   }
 
 
